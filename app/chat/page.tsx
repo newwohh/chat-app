@@ -2,7 +2,7 @@ import AppShellSideBar from "../components/AppShell";
 
 export default function Page() {
   return (
-    <div>
+    <div className="min-h-full">
       <AppShellSideBar />
     </div>
   );
