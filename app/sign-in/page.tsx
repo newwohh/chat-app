@@ -1,8 +1,9 @@
 import AppShellSideBar from "../components/AppShell";
 
 export default function Page() {
-    return (
+  return (
     <div>
-        <AppShellSideBar/>
-    </div>)
+      <AppShellSideBar />
+    </div>
+  );
 }

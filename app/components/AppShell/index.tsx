@@ -1,42 +1,43 @@
-'use client';
+"use client";
 
-import {AppShell} from '@astryxdesign/core/AppShell';
-import {VStack} from '@astryxdesign/core/Stack';
-import {Heading, Text} from '@astryxdesign/core/Text';
-import {NavIcon} from '@astryxdesign/core/NavIcon';
+import { AppShell } from "@astryxdesign/core/AppShell";
+import { VStack } from "@astryxdesign/core/Stack";
+import { Heading, Text } from "@astryxdesign/core/Text";
+import { NavIcon } from "@astryxdesign/core/NavIcon";
 import {
   SideNav,
   SideNavHeading,
   SideNavItem,
   SideNavSection,
-} from '@astryxdesign/core/SideNav';
+} from "@astryxdesign/core/SideNav";
 import {
   ChartBarIcon,
   FolderIcon,
   UsersIcon,
   Cog6ToothIcon,
-} from '@heroicons/react/24/outline';
-import {HomeIcon} from '@heroicons/react/24/solid';
-import {CubeIcon} from '@heroicons/react/24/outline';
+} from "@heroicons/react/24/outline";
+import { HomeIcon } from "@heroicons/react/24/solid";
+import { CubeIcon } from "@heroicons/react/24/outline";
 
 export default function AppShellSideBar() {
   return (
     <AppShell
       contentPadding={6}
-      style={{height: '100%', minHeight: 0}}
+      style={{ height: "100%", minHeight: 0 }}
       sideNav={
         <SideNav
           header={
             <SideNavHeading
               icon={
                 <NavIcon
-                  icon={<CubeIcon style={{width: 16, height: 16}} />}
+                  icon={<CubeIcon style={{ width: 16, height: 16 }} />}
                 />
               }
               heading="App Shell"
               headingHref="#"
             />
-          }>
+          }
+        >
           <SideNavSection title="Main" isHeaderHidden>
             <SideNavItem
               label="Dashboard"
@@ -52,7 +53,8 @@ export default function AppShellSideBar() {
             <SideNavItem label="Settings" icon={Cog6ToothIcon} href="#" />
           </SideNavSection>
         </SideNav>
-      }>
+      }
+    >
       <VStack gap={4}>
         <Heading level={3}>Page Content</Heading>
         <Text type="body">
