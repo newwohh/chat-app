@@ -1,8 +1,6 @@
 "use client";
 
 import { AppShell } from "@astryxdesign/core/AppShell";
-import { VStack } from "@astryxdesign/core/Stack";
-import { Heading, Text } from "@astryxdesign/core/Text";
 import { NavIcon } from "@astryxdesign/core/NavIcon";
 import {
   SideNav,
@@ -12,14 +10,17 @@ import {
 } from "@astryxdesign/core/SideNav";
 import {
   ChartBarIcon,
-  FolderIcon,
   UsersIcon,
   Cog6ToothIcon,
 } from "@heroicons/react/24/outline";
 import { HomeIcon } from "@heroicons/react/24/solid";
 import { CubeIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
+import Chat from "../Chat";
 
 export default function AppShellSideBar() {
+  const [selectedTab, setSelectedTab] = useState("people");
+
   return (
     <AppShell
       contentPadding={6}
@@ -33,20 +34,28 @@ export default function AppShellSideBar() {
                   icon={<CubeIcon style={{ width: 16, height: 16 }} />}
                 />
               }
-              heading="App Shell"
+              heading="Welcome user"
               headingHref="#"
             />
           }
         >
           <SideNavSection title="Main" isHeaderHidden>
             <SideNavItem
-              label="Dashboard"
+              label="People"
               icon={HomeIcon}
-              isSelected
-              href="#"
+              isSelected={selectedTab === "people"}
+              onClick={() => {
+                setSelectedTab("people");
+              }}
             />
-            <SideNavItem label="Analytics" icon={ChartBarIcon} href="#" />
-            <SideNavItem label="Projects" icon={FolderIcon} href="#" />
+            <SideNavItem
+              label="Settings "
+              icon={ChartBarIcon}
+              isSelected={selectedTab === "settings"}
+              onClick={() => {
+                setSelectedTab("settings");
+              }}
+            />
           </SideNavSection>
           <SideNavSection title="Organization">
             <SideNavItem label="Team" icon={UsersIcon} href="#" />
@@ -55,14 +64,8 @@ export default function AppShellSideBar() {
         </SideNav>
       }
     >
-      <VStack gap={4}>
-        <Heading level={3}>Page Content</Heading>
-        <Text type="body">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris.
-        </Text>
-      </VStack>
+      {selectedTab === "people" && <Chat />}
+      {selectedTab === "settings" && <div>Settings</div>}
     </AppShell>
   );
 }
