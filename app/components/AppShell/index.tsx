@@ -24,7 +24,7 @@ export default function AppShellSideBar() {
   return (
     <AppShell
       contentPadding={6}
-      style={{ height: "100%", minHeight: 0 }}
+      style={{ height: "100%" }}
       sideNav={
         <SideNav
           header={

@@ -1,32 +1,43 @@
-import {
-  ChatComposer,
-  ChatComposerDrawer,
-  HStack,
-  Token,
-} from "@astryxdesign/core";
-
+"use client";
+import { useState } from "react";
+import { ChatComposer } from "@astryxdesign/core/Chat";
+import { Stack } from "@astryxdesign/core/Layout";
+import { Text } from "@astryxdesign/core/Text";
 export default function Chat() {
+  const [isStreaming, setIsStreaming] = useState(false);
+  const [value, setValue] = useState(
+    "Click the send button to start streaming.",
+  );
   return (
-    <HStack
-      align="center"
-      vAlign="center"
-      style={{ width: "100%", maxWidth: "100%" }}
+    <Stack
+      direction="vertical"
+      gap={4}
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "end",
+        height: "100%",
+      }}
     >
-      <ChatComposer
-        onSubmit={(value) => {
-          console.log("Sent:", value);
-        }}
-        drawer={
-          <ChatComposerDrawer count={6}>
-            <Token label="feature-prd.docx" onRemove={() => {}} />
-            <Token label="2026-roadmap.pdf" onRemove={() => {}} />
-            <Token label="user-flow.fig" onRemove={() => {}} />
-            <Token label="launch-plan.docx" onRemove={() => {}} />
-            <Token label="user-feedback.csv" onRemove={() => {}} />
-            <Token label="analytics-kpis.csv" onRemove={() => {}} />
-          </ChatComposerDrawer>
-        }
-      />
-    </HStack>
+      <Stack direction="vertical" gap={1}>
+        <ChatComposer
+          value={value}
+          onChange={setValue}
+          onSubmit={(value) => {
+            console.log("Sent:", value);
+            alert(`Successfully sent ${value}`);
+            setValue("");
+            setIsStreaming(true);
+            setTimeout(() => setIsStreaming(false), 5000);
+          }}
+          isStopShown={isStreaming}
+          onStop={() => {
+            console.log("Stopped");
+            setIsStreaming(false);
+          }}
+          placeholder="Send a message to start streaming..."
+        />
+      </Stack>
+    </Stack>
   );
 }
