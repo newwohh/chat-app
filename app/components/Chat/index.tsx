@@ -1,13 +1,17 @@
 import {
   ChatComposer,
   ChatComposerDrawer,
-  Stack,
+  HStack,
   Token,
 } from "@astryxdesign/core";
 
 export default function Chat() {
   return (
-    <Stack direction="vertical" style={{ width: "100%", maxWidth: 450 }}>
+    <HStack
+      align="center"
+      vAlign="center"
+      style={{ width: "100%", maxWidth: "100%" }}
+    >
       <ChatComposer
         onSubmit={(value) => {
           console.log("Sent:", value);
@@ -23,6 +27,6 @@ export default function Chat() {
           </ChatComposerDrawer>
         }
       />
-    </Stack>
+    </HStack>
   );
 }

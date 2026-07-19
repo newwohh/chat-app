@@ -5,5 +5,5 @@ export default function ChatLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <div className="min-h-full">{children}</div>;
+  return <div className="min-h-full h-full">{children}</div>;
 }
