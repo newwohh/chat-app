@@ -5,20 +5,8 @@ import {
   ChatMessage,
   ChatMessageBubble,
 } from "@astryxdesign/core/Chat";
-import { VStack } from "@astryxdesign/core/Layout";
-import { Text } from "@astryxdesign/core/Text";
-import { Avatar } from "@astryxdesign/core/Avatar";
-import { Divider } from "@astryxdesign/core/Divider";
 import { Fragment } from "react";
 import { ChatListItemType } from ".";
-
-const DENSITIES = ["balanced"] as const;
-
-const AVATAR_SIZE = {
-  compact: "xsmall" as const,
-  balanced: "small" as const,
-  spacious: "small" as const,
-};
 
 export default function ChatList({
   messages,

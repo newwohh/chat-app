@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { JSX, useState } from "react";
 import { ChatComposer, ChatLayout } from "@astryxdesign/core/Chat";
 import { Stack } from "@astryxdesign/core/Layout";
 import ChatList from "./ChatList";
@@ -12,7 +12,7 @@ export interface ChatListItemType {
   id?: string;
 }
 
-export default function Chat() {
+export default function Chat(): JSX.Element {
   const [chatInput, setChatInput] = useState<string>("");
   const [chatList, setChatList] = useState<ChatListItemType[]>([]);
 

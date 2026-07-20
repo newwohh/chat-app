@@ -41,25 +41,13 @@ export default function AppShellSideBar() {
         >
           <SideNavSection title="Main" isHeaderHidden>
             <SideNavItem
-              label="People"
+              label="Chat"
               icon={HomeIcon}
               isSelected={selectedTab === "people"}
               onClick={() => {
                 setSelectedTab("people");
               }}
             />
-            <SideNavItem
-              label="Settings "
-              icon={ChartBarIcon}
-              isSelected={selectedTab === "settings"}
-              onClick={() => {
-                setSelectedTab("settings");
-              }}
-            />
-          </SideNavSection>
-          <SideNavSection title="Organization">
-            <SideNavItem label="Team" icon={UsersIcon} href="#" />
-            <SideNavItem label="Settings" icon={Cog6ToothIcon} href="#" />
           </SideNavSection>
         </SideNav>
       }
