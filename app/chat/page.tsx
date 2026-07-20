@@ -1,4 +1,4 @@
-import AppShellSideBar from "../components/AppShell";
+import AppShellSideBar from "@/components/AppShell";
 
 export default function Page() {
   return (

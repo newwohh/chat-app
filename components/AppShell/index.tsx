@@ -16,7 +16,7 @@ import {
 import { HomeIcon } from "@heroicons/react/24/solid";
 import { CubeIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
-import Chat from "../Chat";
+import Chat from "@/components/Chat";
 
 export default function AppShellSideBar() {
   const [selectedTab, setSelectedTab] = useState("people");

@@ -1,5 +1,3 @@
-import AppShellSideBar from "../components/AppShell";
-
 export default function ChatLayout({
   children,
 }: {

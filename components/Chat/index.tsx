@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { ChatComposer } from "@astryxdesign/core/Chat";
 import { Stack } from "@astryxdesign/core/Layout";
-import { Text } from "@astryxdesign/core/Text";
+
 export default function Chat() {
   const [isStreaming, setIsStreaming] = useState(false);
   const [value, setValue] = useState(
