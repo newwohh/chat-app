@@ -10,6 +10,7 @@ export interface ChatListItemType {
   assistantName?: string;
   timestamp: string;
   id?: string;
+  status: "sending" | "sent" | "delivered" | "read" | "error";
 }
 
 export default function Chat(): JSX.Element {
@@ -29,7 +30,12 @@ export default function Chat(): JSX.Element {
     try {
       setChatList([
         ...chatList,
-        { role: "user", content: message, timestamp: new Date().toISOString() },
+        {
+          role: "user",
+          content: message,
+          timestamp: new Date().toISOString(),
+          status: "sent",
+        },
       ]);
       setChatInput("");
     } catch (err) {
