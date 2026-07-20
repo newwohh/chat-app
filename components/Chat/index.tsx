@@ -29,11 +29,7 @@ export default function Chat(): JSX.Element {
     try {
       setChatList([
         ...chatList,
-        {
-          role: "user",
-          content: message,
-          timestamp: new Date().toISOString(),
-        },
+        { role: "user", content: message, timestamp: new Date().toISOString() },
       ]);
       setChatInput("");
     } catch (err) {
@@ -42,7 +38,7 @@ export default function Chat(): JSX.Element {
   };
 
   return (
-    <Stack direction="vertical">
+    <Stack direction="vertical" height={"100%"} isScrollable justify="end">
       <ChatLayout
         composer={
           <ChatComposer
