@@ -1,7 +1,7 @@
 "use client";
 import { JSX, useState } from "react";
 import { ChatComposer, ChatLayout } from "@astryxdesign/core/Chat";
-import { Stack } from "@astryxdesign/core/Layout";
+import { Stack, VStack } from "@astryxdesign/core/Layout";
 import ChatList from "./ChatList";
 
 export interface ChatListItemType {
@@ -44,19 +44,17 @@ export default function Chat(): JSX.Element {
   };
 
   return (
-    <Stack direction="vertical" height={"100%"} isScrollable justify="end">
-      <ChatLayout
-        composer={
-          <ChatComposer
-            value={chatInput}
-            onChange={handleChatInput}
-            onSubmit={handleMessageSent}
-            placeholder="Send a message to start streaming..."
-          />
-        }
-      >
-        <ChatList messages={chatList} />
-      </ChatLayout>
-    </Stack>
+    <ChatLayout
+      composer={
+        <ChatComposer
+          value={chatInput}
+          onChange={handleChatInput}
+          onSubmit={handleMessageSent}
+          placeholder="Send a message to start streaming..."
+        />
+      }
+    >
+      <ChatList messages={chatList} />
+    </ChatLayout>
   );
 }

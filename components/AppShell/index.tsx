@@ -17,6 +17,7 @@ import { HomeIcon } from "@heroicons/react/24/solid";
 import { CubeIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import Chat from "@/components/Chat";
+import { VStack } from "@astryxdesign/core";
 
 export default function AppShellSideBar() {
   const [selectedTab, setSelectedTab] = useState("people");
@@ -52,8 +53,9 @@ export default function AppShellSideBar() {
         </SideNav>
       }
     >
-      {selectedTab === "people" && <Chat />}
-      {selectedTab === "settings" && <div>Settings</div>}
+      <VStack isScrollable={false} height={"100%"}>
+        {selectedTab === "people" && <Chat />}
+      </VStack>
     </AppShell>
   );
 }
